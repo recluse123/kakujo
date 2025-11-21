@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Solutions & Travel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        // 在页面渲染前设置语言，避免闪烁
+        (function() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            const lang = savedLang && (savedLang === 'ja' || savedLang === 'zh' || savedLang === 'en') ? savedLang : 'ja';
+            document.documentElement.lang = lang;
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <div class="logo-main">格序商事</div>
+                <div class="logo-sub">Kakujo Corp.</div>
+            </div>
+            <div class="nav-links">
+                <a href="#services" data-i18n="nav.services">サービス</a>
+                <a href="#projects" data-i18n="nav.projects">プロジェクト</a>
+                <a href="#contact" data-i18n="nav.contact">お問い合わせ</a>
+            </div>
+            <div class="language-switcher">
+                <button onclick="changeLanguage('ja')" class="active">日本語</button>
+                <button onclick="changeLanguage('zh')">中文</button>
+                <button onclick="changeLanguage('en')">English</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 data-i18n="hero.title">テクノロジーと旅の融合</h1>
+                <p data-i18n="hero.subtitle">革新的なITソリューションと旅行体験を提供します</p>
+            </div>
+            <div class="hero-animation"></div>
+        </section>
+
+        <section id="services" class="services">
+            <h2 data-i18n="services.title">サービス内容</h2>
+            <div class="service-grid">
+                <div class="service-card" data-i18n="services.homestay" onclick="window.location.href='service-detail.html?service=homestay'">
+                    <h3>民宿</h3>
+                    <p>快適な宿泊体験を提供</p>
+                </div>
+                <div class="service-card" data-i18n="services.visa" onclick="window.location.href='service-detail.html?service=visa'">
+                    <h3>ビザ申請</h3>
+                    <p>ビザ申請サポートサービス</p>
+                </div>
+                <div class="service-card" data-i18n="services.charter" onclick="window.location.href='service-detail.html?service=charter'">
+                    <h3>観光チャーター</h3>
+                    <p>観光チャーターサービス</p>
+                </div>
+                <div class="service-card" data-i18n="services.it" onclick="window.location.href='service-detail.html?service=it'">
+                    <h3>IT開発</h3>
+                    <p>IT開発・システム構築</p>
+                </div>
+                <div class="service-card" data-i18n="services.realestate" onclick="window.location.href='service-detail.html?service=realestate'">
+                    <h3>不動産仲介</h3>
+                    <p>不動産仲介サービス</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <h2 data-i18n="projects.title">プロジェクト事例</h2>
+            <div class="project-grid">
+                <div class="project-card" data-i18n="projects.ec">
+                    <h3>ECサイト開発</h3>
+                    <p>越境ECプラットフォーム構築</p>
+                </div>
+                <div class="project-card" data-i18n="projects.travel">
+                    <h3>旅行予約システム</h3>
+                    <p>民宿・チャーター予約プラットフォーム</p>
+                </div>
+                <div class="project-card" data-i18n="projects.game">
+                    <h3>ゲームアプリ</h3>
+                    <p>モバイルゲーム開発</p>
+                </div>
+                <div class="project-card" data-i18n="projects.sns">
+                    <h3>SNSマーケティング</h3>
+                    <p>小红书での旅行プロモーション</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="service-contact-cta">
+                <h2 data-i18n="detail.contact">お問い合わせ</h2>
+                <p data-i18n="detail.contact-text">ご質問やご相談がございましたら、お気軽にお問い合わせください。</p>
+                <a href="https://forms.gle/Uuvn2H5qs77AqMHu9" target="_blank" class="cta-button" data-i18n="detail.contact-button">お問い合わせフォームへ</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p data-i18n="footer.copyright">© 2024 TechTravel. All rights reserved.</p>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

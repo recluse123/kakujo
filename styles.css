@@ -1,0 +1,521 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --light-bg: #f5f6fa;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', 'Noto Sans SC', 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* 导航栏样式 */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.logo:hover {
+    transform: translateY(-2px);
+}
+
+.logo-main {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1.2;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 1px;
+    position: relative;
+    font-family: 'Noto Sans SC', 'Noto Sans JP', sans-serif;
+    animation: logoGlow 2s ease-in-out infinite alternate;
+}
+
+.logo-main::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-main::after {
+    transform: scaleX(1);
+}
+
+.logo-sub {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--secondary-color);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 0.2rem;
+    opacity: 0.8;
+    font-family: 'Roboto', sans-serif;
+    transition: var(--transition);
+}
+
+.logo:hover .logo-sub {
+    opacity: 1;
+    color: var(--primary-color);
+}
+
+@keyframes logoGlow {
+    from {
+        filter: drop-shadow(0 0 2px rgba(52, 152, 219, 0.3));
+    }
+    to {
+        filter: drop-shadow(0 0 8px rgba(52, 152, 219, 0.6));
+    }
+}
+
+@keyframes borderGlow {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 0 1rem;
+    padding: 0.5rem;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+}
+
+.language-switcher button {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    margin: 0 0.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.language-switcher button.active {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+/* 英雄区域样式 */
+.hero {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    z-index: 2;
+    padding: 2rem;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.2;
+}
+
+.hero h1 span {
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease 0.3s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero-animation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="28" fill="none" stroke="white" stroke-width="0.5"/></svg>') repeat;
+    opacity: 0.1;
+    animation: rotate 20s linear infinite;
+}
+
+/* 服务区域样式 */
+.services {
+    padding: 5rem 2rem;
+    background: var(--light-bg);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+.service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* 项目展示区域样式 */
+.projects {
+    padding: 5rem 2rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+.project-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+/* 联系表单样式 */
+.contact {
+    padding: 5rem 2rem;
+    background: var(--light-bg);
+}
+
+.service-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.service-contact-cta {
+    background: var(--light-bg);
+    padding: 3rem;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.service-contact-cta h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+.service-contact-cta p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--secondary-color);
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.cta-button:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 页脚样式 */
+footer {
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* 动画效果 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .logo-main {
+        font-size: 1.4rem;
+    }
+    
+    .logo-sub {
+        font-size: 0.65rem;
+        letter-spacing: 2px;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .service-grid,
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* PC版本的动态文字样式 */
+.dynamic-text {
+    font-size: 1.4rem;
+    margin-top: 4rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    height: 2em;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 0.5rem 2rem;
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+}
+
+.dynamic-text span {
+    display: inline-block;
+    position: relative;
+    padding: 0 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideInOut 3s ease-in-out infinite;
+}
+
+.dynamic-text span::before {
+    content: '→';
+    position: absolute;
+    left: -1.5rem;
+    color: var(--secondary-color);
+    animation: arrowPulse 2s infinite;
+}
+
+.dynamic-text span::after {
+    content: '←';
+    position: absolute;
+    right: -1.5rem;
+    color: var(--secondary-color);
+    animation: arrowPulse 2s infinite;
+}
+
+/* 移动端版本的动态文字样式 */
+.dynamic-text-mobile {
+    display: none; /* 默认隐藏，在移动端媒体查询中显示 */
+    font-size: 1.2rem;
+    margin-top: 3rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    height: 2em;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+}
+
+.dynamic-text-mobile span {
+    display: inline-block;
+    position: relative;
+    padding: 0 0.5rem;
+    opacity: 0;
+    transform: translateX(20px);
+    animation: slideInOutMobile 3s ease-in-out infinite;
+}
+
+.dynamic-text-mobile span::before {
+    content: '→';
+    position: absolute;
+    left: -1rem;
+    color: var(--secondary-color);
+    animation: arrowPulse 2s infinite;
+}
+
+@keyframes slideInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    20% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    80% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes arrowPulse {
+    0%, 100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes slideInOutMobile {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    20% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    80% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .dynamic-text {
+        display: none;
+    }
+    
+    .dynamic-text-mobile {
+        display: flex;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .service-grid,
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+} 

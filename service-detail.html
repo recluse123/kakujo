@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サービス詳細 - 格序商事</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="service-detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        // 在页面渲染前设置语言，避免闪烁
+        (function() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            const lang = savedLang && (savedLang === 'ja' || savedLang === 'zh' || savedLang === 'en') ? savedLang : 'ja';
+            document.documentElement.lang = lang;
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo" onclick="window.location.href='index.html'">
+                <div class="logo-main">格序商事</div>
+                <div class="logo-sub">Kakujo Corp.</div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html#services" data-i18n="nav.services">サービス</a>
+                <a href="index.html#projects" data-i18n="nav.projects">プロジェクト</a>
+                <a href="index.html#contact" data-i18n="nav.contact">お問い合わせ</a>
+            </div>
+            <div class="language-switcher">
+                <button onclick="changeLanguage('ja')" class="active">日本語</button>
+                <button onclick="changeLanguage('zh')">中文</button>
+                <button onclick="changeLanguage('en')">English</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="service-detail-main">
+        <div class="breadcrumb">
+            <a href="index.html">ホーム</a>
+            <span> / </span>
+            <span id="service-breadcrumb">サービス</span>
+        </div>
+
+        <section class="service-detail-hero">
+            <h1 id="service-title">サービス名</h1>
+            <p id="service-subtitle">サービス説明</p>
+        </section>
+
+        <section class="service-content">
+            <div class="service-description">
+                <h2 data-i18n="detail.overview">概要</h2>
+                <p id="service-description-text">詳細な説明がここに表示されます。</p>
+            </div>
+
+            <div class="service-features">
+                <h2 data-i18n="detail.features">特徴</h2>
+                <ul id="service-features-list">
+                    <li>特徴1</li>
+                    <li>特徴2</li>
+                    <li>特徴3</li>
+                </ul>
+            </div>
+
+            <div class="service-gallery">
+                <h2 data-i18n="detail.gallery">ギャラリー</h2>
+                <div class="gallery-container" id="gallery-container">
+                    <!-- 图片将通过JavaScript动态加载 -->
+                </div>
+            </div>
+
+            <!-- 图片模态框 -->
+            <div id="image-modal" class="image-modal">
+                <div class="modal-content">
+                    <span class="modal-close" onclick="closeImageModal()">&times;</span>
+                    <span class="modal-prev" onclick="changeImage(-1)">&#10094;</span>
+                    <img id="modal-image" src="" alt="Gallery image">
+                    <span class="modal-next" onclick="changeImage(1)">&#10095;</span>
+                </div>
+            </div>
+
+            <div class="service-contact-cta">
+                <h2 data-i18n="detail.contact">お問い合わせ</h2>
+                <p data-i18n="detail.contact-text">ご質問やご相談がございましたら、お気軽にお問い合わせください。</p>
+                <a href="https://forms.gle/Uuvn2H5qs77AqMHu9" target="_blank" class="cta-button" data-i18n="detail.contact-button">お問い合わせフォームへ</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p data-i18n="footer.copyright">© 2025 格序商事 Kakujo Corp. All rights reserved.</p>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="service-detail.js"></script>
+</body>
+</html>
+
