@@ -96,7 +96,59 @@
             <div class="service-contact-cta">
                 <h2 data-i18n="detail.contact">お問い合わせ</h2>
                 <p data-i18n="detail.contact-text">ご質問やご相談がございましたら、お気軽にお問い合わせください。</p>
-                <a href="https://forms.gle/Uuvn2H5qs77AqMHu9" target="_blank" class="cta-button" data-i18n="detail.contact-button">お問い合わせフォームへ</a>
+                
+                <div class="contact-methods">
+                    <div class="contact-info">
+                        <div class="phone-contact">
+                            <i class="phone-icon">📞</i>
+                            <div class="phone-details">
+                                <span class="phone-label" data-i18n="contact.phone">担当者電話番号</span>
+                                <a href="tel:+81-90-9435-1991" class="phone-number">090-9435-1991</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qr-codes">
+                        <div class="qr-item">
+                            <div class="qr-code-wrapper">
+                                <img src="images/qr-codes/wechat-qr.png" alt="WeChat QR Code" class="qr-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                <div class="qr-placeholder" style="display:none;">
+                                    <div class="qr-placeholder-content">
+                                        <span>WeChat QR</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="qr-label">WeChat</p>
+                        </div>
+                        <div class="qr-item">
+                            <div class="qr-code-wrapper">
+                                <img src="images/qr-codes/line-qr.png" alt="LINE QR Code" class="qr-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                <div class="qr-placeholder" style="display:none;">
+                                    <div class="qr-placeholder-content">
+                                        <span>LINE QR</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="qr-label">LINE</p>
+                        </div>
+                    </div>
+
+                    <div class="sp-links">
+                        <a href="https://line.me/R/ti/p/@sakurayuki_line" target="_blank" class="sp-link-button line-link" data-i18n="contact.line-app">LINEアプリで開く</a>
+                        <a href="weixin://" class="sp-link-button wechat-link" data-i18n="contact.wechat-app">WeChatアプリで開く</a>
+                    </div>
+
+                    <div class="contact-buttons">
+                        <a href="tel:+81-90-9435-1991" class="cta-button modern-button phone-button">
+                            <span class="button-icon">📞</span>
+                            <span class="button-text" data-i18n="contact.phone-call">電話でお問い合わせ</span>
+                        </a>
+                        <a href="https://forms.gle/Uuvn2H5qs77AqMHu9" target="_blank" class="cta-button modern-button" data-i18n="detail.contact-button">
+                            <span class="button-icon">📝</span>
+                            <span class="button-text">お問い合わせフォームへ</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

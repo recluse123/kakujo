@@ -309,6 +309,274 @@ nav {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* 問い合わせ方法のスタイル */
+.contact-methods {
+    margin-top: 2rem;
+}
+
+.contact-info {
+    margin-bottom: 2.5rem;
+}
+
+.phone-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+}
+
+.phone-contact:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.phone-icon {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+}
+
+.phone-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.phone-label {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.phone-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.phone-number:hover {
+    color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+/* QRコードのスタイル */
+.qr-codes {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin: 2.5rem 0;
+    flex-wrap: wrap;
+}
+
+.qr-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.qr-code-wrapper {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    background: white;
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qr-code-wrapper:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.qr-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.qr-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f6fa, #e8ecf1);
+    border-radius: 8px;
+    border: 2px dashed var(--secondary-color);
+}
+
+.qr-placeholder-content {
+    text-align: center;
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.qr-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+/* SP版専用リンク */
+.sp-links {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.sp-link-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1.2rem 2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.sp-link-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.sp-link-button:hover::before {
+    left: 100%;
+}
+
+.line-link {
+    background: linear-gradient(135deg, #06C755, #00B900);
+    color: white;
+}
+
+.line-link:hover {
+    background: linear-gradient(135deg, #00B900, #06C755);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(6, 199, 85, 0.3);
+}
+
+.wechat-link {
+    background: linear-gradient(135deg, #07C160, #00D976);
+    color: white;
+}
+
+.wechat-link:hover {
+    background: linear-gradient(135deg, #00D976, #07C160);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(7, 193, 96, 0.3);
+}
+
+/* おしゃれなボタンデザイン */
+.contact-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    width: 100%;
+}
+
+.modern-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1.2rem 2.5rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.modern-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.modern-button:hover::before {
+    left: 100%;
+}
+
+.modern-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.modern-button:active {
+    transform: translateY(-1px);
+}
+
+.button-icon {
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-text {
+    position: relative;
+    z-index: 1;
+}
+
+.phone-button {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+}
+
+.phone-button:hover {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    box-shadow: 0 8px 25px rgba(46, 204, 113, 0.4);
+}
+
 /* 页脚样式 */
 footer {
     background: var(--primary-color);
@@ -360,6 +628,38 @@ footer {
     .service-grid,
     .project-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* SP版でQRコードとリンクを表示 */
+    .sp-links {
+        display: flex;
+    }
+
+    .qr-codes {
+        gap: 2rem;
+    }
+
+    .qr-code-wrapper {
+        width: 150px;
+        height: 150px;
+    }
+
+    .phone-contact {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .phone-details {
+        align-items: center;
+    }
+
+    .contact-buttons {
+        width: 100%;
+    }
+
+    .modern-button {
+        width: 100%;
+        padding: 1rem 1.5rem;
     }
 }
 
