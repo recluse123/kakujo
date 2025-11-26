@@ -1,5 +1,7 @@
 {
 	"name": "kakujo-shouji",
 	"compatibility_date": "2025-11-26",
-	"main": "src/index.js"
+  	"assets": {
+    		"directory": "public"
+  	}
 }
